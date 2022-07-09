@@ -1,3 +1,14 @@
+const express = require('express');
 
+const app = express();
 
-console.log("SANTIAGO diaz")
+app.get('/', (req, res) => {
+    res.json({
+        ok: true,
+        msg: "Hello client!",
+    });
+});
+
+app.listen(8080, () => {
+    console.log("Server running on port: 8080");
+});
