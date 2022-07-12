@@ -2,7 +2,6 @@
     User controllers / AUTH
     host + /api/auth
 */
-const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const genJWT = require('../helpers/jwt');

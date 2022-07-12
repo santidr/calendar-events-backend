@@ -8,10 +8,10 @@ const genJWT = (uid, name) => {
 
         jwt.sign(payload, process.env.SECRET_JWT_SEED, {
             expiresIn: '2h'
-        }, (err, token) => {
+        }, (error, token) => {
 
-            if (err) {
-                console.log(err);
+            if (error) {
+                console.log(error);
                 reject('Failed token generation.');
             }
 
