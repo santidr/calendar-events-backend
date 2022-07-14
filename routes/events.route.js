@@ -9,11 +9,9 @@ const router = Router();
 router.use(validateJWT);
 
 router.get('/', getEvents);
+router.post('/new', newEventValidator(), createEvent);
 
-router.use(newEventValidator());
-router.post('/new', createEvent);
-
-router.put('/edit/:id', updateEvent);
+router.put('/edit/:id', newEventValidator(), updateEvent);
 
 router.delete('/delete/:id', deleteEvent);
 
