@@ -35,7 +35,8 @@ const loginUser = async (req, res) => {
         res.status(200).json({
             ok: true,
             msg: 'Logged in succesfuly.',
-            email,
+            uid: user.id,
+            name: user.name,
             token
         });
 
@@ -75,9 +76,8 @@ const createUser = async (req, res) => {
         res.status(201).json({
             ok: true,
             msg: 'User created successfuly',
-            user: {
-                name: user.name,
-            },
+            uid: user.id,
+            name: user.name,
             token
         });
 
