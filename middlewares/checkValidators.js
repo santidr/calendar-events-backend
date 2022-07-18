@@ -1,4 +1,5 @@
 const { check } = require('express-validator');
+const { isDate } = require('../helpers/isDate');
 const validateFields = require('./validateFields');
 
 // Auth fields validator
@@ -23,8 +24,8 @@ const createUserValidator = () => (
 const newEventValidator = () => (
     [
         check('title', 'Title field is required.').not().isEmpty(),
-        check('start', 'Start field is required.').isDate(),
-        check('end', 'End field is required.').isDate(),
+        check('start', 'Start field is required.').custom(isDate),
+        check('end', 'End field is required.').custom(isDate),
         validateFields
     ]
 );
